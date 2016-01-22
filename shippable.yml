@@ -29,7 +29,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push sreyaj/newimg1
+    - docker push sreyaj/newimg2
 
   smoke_test:
     - sudo ls /
@@ -41,7 +41,7 @@ deploy:
 
 integrations:
   notification:
-    - integrationName: "sreyaya-slack"
+    - integrationName: "sreya-slack"
       type: slack
       recipients:
         - pvt-channel

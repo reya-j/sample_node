@@ -16,10 +16,10 @@ env:
 
 build:
   pre_ci:
-    - docker build --rm -t=gcr.io/vidya-project/newimg1 .
+    - docker build --rm -t=sreyaj/newimg1 .
 
   pre_ci_boot:
-    image_name: gcr.io/vidya-project/newimg1
+    image_name: sreyaj/newimg1
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
@@ -29,7 +29,7 @@ build:
     - ls -al
 
   post_ci:
-    - docker push gcr.io/vidya-project/newimg1
+    - docker push sreyaj/newimg1
 
   smoke_test:
     - sudo ls /
@@ -41,7 +41,7 @@ deploy:
 
 integrations:
   notification:
-    - integrationName: "vidya-slack"
+    - integrationName: "sreyaya-slack"
       type: slack
       recipients:
         - pvt-channel
@@ -55,8 +55,8 @@ integrations:
     
 
   hub:
-    - integrationName: "gcr-shiptest"
-      type: gcr
+    - integrationName: "sreyadocker"
+      type: docker
       branches:
         only:
           - master

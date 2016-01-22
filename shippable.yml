@@ -16,10 +16,10 @@ env:
 
 build:
   pre_ci:
-    - docker build --rm -t=sreyaj/newimg1 .
+    - docker build --rm -t=sreyaj/newimg2 .
 
   pre_ci_boot:
-    image_name: sreyaj/newimg1
+    image_name: sreyaj/newimg2
     image_tag: latest
     pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
